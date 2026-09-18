@@ -22,7 +22,14 @@ LIFE Check42 → LIFE Academy → LIFE ROAD MAP → LIFE CONSULTANT
 
 内容の出典は `Downloads/REALIZE CLUB機能説明 (2).pdf`。
 Check42 の6テーマは **お金・住まい・健康・災害・万が一・人生100年**（会員サイトの「老後」ではなくPDFに合わせた）。
-画面：CORE・SHIFT・EVENT・CONSULTANT は会員サイトの実画面。LINE・ミオ先生相談・Check42・Academy・ROAD MAP はHTMLの画面イメージ。
+画面は**すべて実画面**（社長指示「あてじゃなくて実際の画面」）。
+- LIFE JOURNEY：LINEのトーク画面（Downloads/S__16654404.jpg）→ `ui-mio.webp`
+- ミオ先生：realizeclub.net/miosensei/ をスマホ幅で撮影 → `ui-mio-page.webp`
+- CORE・SHIFT・EVENT・CONSULTANT：会員サイト（rc-dashboard の _*-preview.html）
+- Check42：lifemake.realizeclub.net をスマホ幅で撮影 → `ui-check42.webp`
+- Academy・ROAD MAP：本番はログインが要るので、機能説明PDF（p7・p8）の画面を切り出し → `academy-screen.webp` `roadmap-screen.webp`（PC画面なので細枠のウィンドウで表示）
+- LIFE EVENT Check の後ろのミオ先生の風景は、ミオ先生が隠れるので外した
+- 8シーンの写真は社長作（ChatGPT画像生成）。`life-01-marriage.jpg`〜`life-08-disaster.jpg`
 
 ## デザインの決まりごと
 
@@ -34,7 +41,7 @@ Check42 の6テーマは **お金・住まい・健康・災害・万が一・�
 
 ## 画像
 
-- 仮置き：8シーンは色の面、ミオ先生・PJの机は既存イラストで代用
+- 仮置き：PJの机（`pj-desk.jpg` 未着）は手紙の挿し絵で代用
 - 生成プロンプトとファイル名は `_画像生成プロンプト.md`（ローカルのみ）
 - `assets/life-01-marriage.jpg` 〜 `life-08-disaster.jpg`、`pj-desk.jpg` は置くだけで自動表示
 - スマホ画面は会員サイト（rc-dashboard）の実画面を撮影したもの。Check42 とミオ先生の相談画面だけはHTMLで作った画面イメージ

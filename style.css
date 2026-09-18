@@ -388,3 +388,11 @@ w-b{display:inline-block;max-width:100%}
   .btn-bar{width:auto;min-height:44px;padding:0 16px;font-size:min(13px,3.5vw);white-space:nowrap}
 }
 @media(max-width:359px){.cta-bar-text{display:none}}
+
+/* ---------- PC画面の実画面（Academy・ROAD MAP）：細い枠のウィンドウ ---------- */
+.window{width:100%;max-width:520px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden;
+  box-shadow:0 30px 60px rgba(13,29,42,.14),0 6px 14px rgba(13,29,42,.06);transform:rotate(-1deg)}
+.window-bar{display:flex;gap:6px;padding:10px 12px;background:#f3f1ec;border-bottom:1px solid var(--line)}
+.window-bar i{width:8px;height:8px;border-radius:50%;background:#d8d3c8}
+.window img{width:100%;height:auto}
+@media(max-width:600px){.window{max-width:none}}

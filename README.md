@@ -12,8 +12,17 @@
 ## 構成（2026年9月18日の指示書のSECTION 01〜14）
 
 01 ファーストビュー／02 社長への問い／03 会社から見えない人生（8シーン）／04 REALIZE CLUBとは／
-05 社員の人生の旅（縦ライン）／06 LIFE JOURNEY／07 LIFE EVENT Check／08 LIFE Check42／09 ミオ先生／
+05 社員が体験する人生の旅（9つの体験を一本の縦ラインで）／
 10 会社には見えない／11 社長の想いへ戻る／12 PRESIDENT JOURNEY／13 DAY 1・3・7／14 最後のCTA
+
+### 05 の9つの順番（2026年9月18日 社長指定。「流れが綺麗」）
+
+LIFE JOURNEY（LINE・いつでも伴走）→ ミオ先生 → LIFE CORE → LIFE SHIFT → LIFE EVENT Check →
+LIFE Check42 → LIFE Academy → LIFE ROAD MAP → LIFE CONSULTANT
+
+内容の出典は `Downloads/REALIZE CLUB機能説明 (2).pdf`。
+Check42 の6テーマは **お金・住まい・健康・災害・万が一・人生100年**（会員サイトの「老後」ではなくPDFに合わせた）。
+画面：CORE・SHIFT・EVENT・CONSULTANT は会員サイトの実画面。LINE・ミオ先生相談・Check42・Academy・ROAD MAP はHTMLの画面イメージ。
 
 ## デザインの決まりごと
 

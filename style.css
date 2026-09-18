@@ -1,0 +1,379 @@
+/* =====================================================================
+   REALIZE CLUB 社長向けLP（ストーリー版） 2026年9月18日
+   方針：静か・上品・人間的。写真・余白・タイポグラフィ・光で見せる。
+   - 角丸カード・ピル型ラベル・英字の小見出し・グラデーション・金の面は使わない
+   - 金は細い線・小さなアクセント・ロゴだけ
+   - カードは DAY 一覧だけ（全体の2割以内）
+   ===================================================================== */
+
+:root{
+  --navy-1:#0d1d2a;
+  --navy-2:#102331;
+  --navy-3:#152a38;
+  --ivory:#f6f3ed;
+  --paper:#faf8f3;
+  --gold:#b69b61;
+  --gold-2:#c2a76d;
+  --ink:#1d2a33;
+  --muted:#5d6a72;
+  --line:#e2ddd2;
+  --serif:'Shippori Mincho','Yu Mincho','Hiragino Mincho ProN',serif;
+  --sans:'Noto Sans JP','Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif;
+  --hand:'Klee One','Yu Mincho',serif;
+  --bar-h:0px;
+}
+[hidden]{display:none!important}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:300;
+  font-size:16px;line-height:2;letter-spacing:.04em;line-break:strict}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,p,figure,ol,ul{margin:0;padding:0}
+ol,ul{list-style:none}
+b,strong{font-weight:500}
+
+/* 改行：PCだけ／スマホだけ */
+br.sp{display:none}
+@media(max-width:600px){br.sp{display:inline}br.pc{display:none}}
+
+/* 文節で折り返す（全幅。語の途中では折り返さない） */
+w-b{display:inline-block;max-width:100%}
+
+/* ---------- 共通の書体 ---------- */
+.h-serif{font-family:var(--serif);font-weight:500;letter-spacing:.06em;line-height:1.75}
+.h-hand{font-family:var(--hand);font-weight:600;letter-spacing:.06em;line-height:1.8}
+.label{font-size:13px;letter-spacing:.14em;color:var(--gold);font-weight:400;margin-bottom:28px}
+.body{font-size:16px;line-height:2.1;color:var(--muted)}
+.body+.body{margin-top:1.4em}
+.body-lg{font-family:var(--serif);font-size:20px;line-height:2.1;letter-spacing:.06em}
+
+/* ---------- ボタン（金の面は使わない） ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:58px;padding:0 38px;
+  font-size:15px;font-weight:500;letter-spacing:.08em;border-radius:2px;transition:background .3s,color .3s,border-color .3s}
+.btn-primary{background:var(--navy-2);color:#fff;border:1px solid var(--navy-2)}
+.btn-primary:hover{background:transparent;color:var(--navy-2)}
+.btn-light{background:var(--paper);color:var(--navy-2);border:1px solid var(--paper)}
+.btn-light:hover{background:transparent;color:var(--paper)}
+.btn-text{display:inline-block;font-size:14px;letter-spacing:.08em;padding:6px 0;border-bottom:1px solid var(--gold);color:var(--ink)}
+
+/* ---------- ヘッダー ---------- */
+.site-header{position:absolute;top:0;left:0;right:0;z-index:20;padding:22px 5vw}
+.brand{display:inline-flex;align-items:center;gap:12px;font-family:var(--serif);font-size:17px;letter-spacing:.18em;color:var(--ink)}
+.brand-mark{width:36px;height:36px}
+
+/* ---------- ふわっと出る ---------- */
+.fade{opacity:0;transform:translateY(18px);transition:opacity 1.1s ease,transform 1.1s ease}
+.fade.is-in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.fade{opacity:1;transform:none;transition:none}}
+
+/* ---------- スマホの画面（大きく、少しだけ傾ける） ---------- */
+.phone{position:relative;width:100%;max-width:340px;aspect-ratio:390/844;border-radius:36px;padding:10px;background:#0f1b24;
+  box-shadow:0 30px 60px rgba(13,29,42,.18),0 8px 18px rgba(13,29,42,.1);margin:0 auto}
+.phone>img,.phone>.mock{width:100%;height:100%;border-radius:27px;object-fit:cover;object-position:top;background:#fff;overflow:hidden}
+.tilt-r{transform:rotate(2.5deg)}
+.tilt-l{transform:rotate(-2.5deg)}
+.phone-sm{max-width:230px;border-radius:28px;padding:8px}
+.phone-sm>img,.phone-sm>.mock{border-radius:21px}
+
+/* 画面イメージ（Check42・相談） */
+.mock{display:flex;flex-direction:column;font-family:var(--sans);font-weight:400;color:#1f2d27;letter-spacing:.02em;line-height:1.6}
+.mock-bar{padding:18px 16px 12px;font-size:13px;font-weight:500;color:#12815e;border-bottom:1px solid #eef1ef}
+.mock-ttl{padding:14px 16px 0;font-size:15px;font-weight:500}
+.mock-radar{width:70%;margin:10px auto 4px}
+.mock-radar .grid{fill:none;stroke:#dfe7e3;stroke-width:1.2}
+.mock-radar .val{fill:rgba(22,163,110,.18);stroke:#16a36e;stroke-width:2.2}
+.mock-list{padding:6px 16px 0}
+.mock-list li{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid #f0f2f1;font-size:13px}
+.mock-list span{font-size:11px;padding:2px 8px;border-radius:3px}
+.mock-list .ok{background:#e6f5ee;color:#12815e}
+.mock-list .mid{background:#fff4e0;color:#a26a12}
+.mock-list .ng{background:#fdeceb;color:#b3413a}
+.mock-note{margin:14px 16px 0;padding:12px 14px;background:#f5f8f6;border-radius:6px;font-size:12.5px;color:#34443c}
+.mock-lg .mock-bar{font-size:15px;padding:24px 20px 14px}
+.mock-lg .mock-ttl{font-size:18px;padding:18px 20px 6px}
+.mock-lg .mock-list{padding:6px 20px 0}
+.mock-lg .mock-list li{font-size:15px;padding:13px 0}
+.mock-lg .mock-list span{font-size:12px;padding:3px 10px}
+.mock-lg .mock-note{font-size:14px;margin:18px 20px 0;padding:14px 16px}
+.mock-chat{background:#f4f6f5;gap:12px}
+.mock-chat .mock-bar{background:#fff}
+.bubble{margin:0 12px;padding:10px 12px;font-size:12px;border-radius:12px;line-height:1.65}
+.bubble.me{align-self:flex-end;max-width:80%;background:#12815e;color:#fff;border-bottom-right-radius:3px}
+.bubble.mio{max-width:88%;background:#fff;border-bottom-left-radius:3px;display:flex;gap:8px;align-items:flex-start}
+.bubble.mio img{width:28px;height:28px;border-radius:50%;flex:none}
+
+/* =====================================================================
+   SECTION 01 ファーストビュー
+   ===================================================================== */
+.fv{position:relative;display:grid;grid-template-columns:minmax(0,34fr) minmax(0,66fr);min-height:100vh;min-height:100svh;background:var(--ivory)}
+.fv-photo{grid-column:2;grid-row:1;background:#b8a58a url(assets/fv-office.webp) 62% center/cover no-repeat;
+  animation:slowzoom 18s ease-out both}
+@keyframes slowzoom{from{transform:scale(1.06)}to{transform:scale(1)}}
+.fv{overflow:hidden}
+.fv-text{grid-column:1;grid-row:1;align-self:end;padding:0 3.5vw 11vh 5vw;position:relative;z-index:2}
+.fv-title{font-family:var(--serif);font-weight:500;font-size:clamp(40px,3.9vw,58px);line-height:1.6;letter-spacing:.08em;color:var(--navy-1)}
+.fv-sub{margin-top:30px;font-size:15px;line-height:2;color:var(--muted)}
+.fv-brand{margin-top:18px;font-family:var(--serif);font-size:15px;letter-spacing:.22em;color:var(--navy-2)}
+.fv-actions{margin-top:44px;display:flex;flex-direction:column;align-items:flex-start;gap:20px}
+@media(prefers-reduced-motion:reduce){.fv-photo{animation:none}}
+
+/* =====================================================================
+   SECTION 02 社長への問い
+   ===================================================================== */
+.question{min-height:88vh;display:flex;align-items:center;justify-content:center;padding:18vh 6vw;background:var(--ivory);text-align:center}
+.question-text{font-family:var(--serif);font-weight:400;font-size:clamp(28px,2.9vw,42px);line-height:2.1;letter-spacing:.08em;color:var(--navy-1)}
+
+/* =====================================================================
+   SECTION 03 会社から見えない人生
+   ===================================================================== */
+.unseen{padding:18vh 0 20vh;background:var(--paper)}
+.unseen-head{padding:0 8vw;margin-bottom:9vh}
+.unseen-head h2{font-size:clamp(28px,2.8vw,40px);color:var(--navy-1)}
+.scenes{display:grid;grid-template-columns:repeat(4,1fr);gap:56px 3px;padding:0 3px}
+.scene-photo{aspect-ratio:3/4;background:var(--tone) var(--img) center/cover no-repeat}
+.scene figcaption{padding:20px 22px 0;display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:baseline}
+.scene-no{font-family:var(--serif);font-size:13px;color:var(--gold);letter-spacing:.1em}
+.scene b{font-family:var(--serif);font-weight:500;font-size:22px;letter-spacing:.1em}
+.scene-line{grid-column:1/-1;margin-top:6px;font-size:14px;color:var(--muted);line-height:1.9}
+.unseen-foot{margin:14vh auto 0;padding:0 8vw;text-align:center;font-family:var(--serif);font-size:clamp(22px,2vw,30px);line-height:2.1;letter-spacing:.08em;color:var(--navy-1)}
+
+/* =====================================================================
+   SECTION 04 REALIZE CLUBとは
+   ===================================================================== */
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:6vw;align-items:center;padding:20vh 10vw;background:var(--ivory)}
+.about-lead{font-family:var(--serif);font-size:clamp(22px,2vw,28px);line-height:2;letter-spacing:.06em;color:var(--navy-1)}
+.about-steps{margin-top:48px;font-size:17px;line-height:2.2;color:var(--ink)}
+.about-close{margin-top:44px;font-size:17px;line-height:2.1;color:var(--ink)}
+.about-ui .phone{max-width:320px}
+
+/* =====================================================================
+   SECTION 05 人生の旅（一本の縦ライン）
+   ===================================================================== */
+.story{padding:20vh 6vw 18vh;background:var(--paper)}
+.story-head{text-align:center;margin-bottom:12vh}
+.story-head h2{font-size:clamp(28px,2.8vw,40px);color:var(--navy-1)}
+.story-head p{margin-top:22px;color:var(--muted)}
+.story-line{position:relative;max-width:1000px;margin:0 auto}
+.story-line::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--line)}
+.story-line::after{content:'';position:absolute;left:50%;top:0;width:1px;height:calc(var(--progress,0) * 100%);background:var(--gold);transition:height .2s linear}
+.story-step{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:10vw;align-items:center;padding:7vh 0}
+.story-step::before{content:'';position:absolute;left:50%;top:50%;width:9px;height:9px;margin:-4px 0 0 -4px;border-radius:50%;background:var(--paper);border:1px solid var(--gold);z-index:1}
+.story-step:nth-child(even) .story-copy{order:2}
+.story-copy{text-align:right}
+.story-step:nth-child(even) .story-copy{text-align:left}
+.story-no{display:block;font-family:var(--serif);font-size:15px;color:var(--gold);letter-spacing:.14em;margin-bottom:10px}
+.story-copy h3{font-family:var(--serif);font-weight:500;font-size:26px;line-height:1.5;letter-spacing:.06em;color:var(--navy-1)}
+.story-copy p{margin-top:14px;font-size:16px;color:var(--muted)}
+
+/* =====================================================================
+   SECTION 06〜08 代表サービス
+   ===================================================================== */
+.feature{padding:20vh 10vw;display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:center}
+.feature h2{font-size:clamp(26px,2.5vw,36px);color:var(--navy-1);margin-bottom:34px}
+.feature-journey{background:var(--ivory)}
+.feature-journey .phone{max-width:330px}
+
+.feature-event{display:block;padding:0 0 20vh;background:var(--paper)}
+.event-visual{height:46vh;min-height:300px;background:#cfd8d6 url(assets/event-landscape.webp) 78% center/cover no-repeat}
+.event-body{display:grid;grid-template-columns:1.1fr .9fr;gap:8vw;align-items:center;padding:0 10vw}
+.event-body .feature-text{padding-top:14vh}
+.event-body .feature-ui{margin-top:-14vh}
+.event-body .phone{max-width:320px}
+
+.feature-check{background:var(--ivory);grid-template-columns:.8fr 1.2fr}
+.check-visual{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:2vw}
+.radar{width:100%;max-width:420px;overflow:visible}
+.r-grid{fill:none;stroke:#d7cfbf;stroke-width:1}
+.r-axis{stroke:#e2dccf;stroke-width:1}
+.r-val{fill:rgba(182,155,97,.16);stroke:var(--gold);stroke-width:1.6}
+.radar text{font-family:var(--serif);font-size:15px;fill:var(--navy-2);text-anchor:middle;letter-spacing:.08em}
+.check-phone{max-width:300px}
+
+/* =====================================================================
+   SECTION 09 ミオ先生
+   ===================================================================== */
+.mio{display:grid;grid-template-columns:1.1fr .9fr;align-items:stretch;background:#fff}
+.mio-photo{min-height:78vh;background:#efe9df url(assets/mio-listen.webp) 30% center/cover no-repeat}
+.mio-text{align-self:center;padding:14vh 8vw 14vh 6vw}
+.mio-text h2{font-size:clamp(26px,2.3vw,34px);color:var(--navy-1);margin-bottom:36px}
+
+/* =====================================================================
+   SECTION 10 会社には見えない
+   ===================================================================== */
+.privacy{padding:24vh 8vw;background:var(--paper);text-align:center}
+.privacy-text{font-size:17px;line-height:2.3;color:var(--muted)}
+.privacy-big{margin-top:12vh;font-size:clamp(30px,3.2vw,46px);color:var(--navy-1)}
+
+/* =====================================================================
+   SECTION 11 社長の想いへ戻る
+   ===================================================================== */
+.return{display:grid;grid-template-columns:1fr 1fr;background:var(--navy-1);color:#eef0f0}
+.return-photo{min-height:86vh;background:#0b141c url(assets/president-night.webp) 45% center/cover no-repeat}
+.return-text{align-self:center;padding:16vh 8vw}
+.return-text .body-lg{color:#cdd4d8}
+.return-big{margin-top:9vh;font-size:clamp(26px,2.5vw,36px);color:#fff}
+
+/* =====================================================================
+   SECTION 12 PRESIDENT JOURNEY（夜の部屋）
+   ===================================================================== */
+.pj{display:grid;grid-template-columns:1fr 1fr;background:var(--navy-1);color:#f1eee7}
+.pj-visual{min-height:92vh;background:#2a2118 url(assets/pj-desk.jpg) center/cover no-repeat}
+.pj-visual.is-fallback{background-image:url(assets/pj-letter-illust.webp);background-position:55% center}
+.pj-text{align-self:center;padding:16vh 8vw}
+.pj-letter{font-size:clamp(20px,1.7vw,24px);line-height:2.2;color:#f1eee7}
+.pj-name{margin-top:10vh}
+.pj-title{font-family:var(--serif);font-size:15px;letter-spacing:.3em;color:var(--gold-2)}
+.pj-sub{margin:14px 0 40px;font-family:var(--serif);font-size:20px;line-height:2;letter-spacing:.06em}
+
+/* =====================================================================
+   SECTION 13 DAY（カードはここだけ）
+   ===================================================================== */
+.days{padding:18vh 8vw;background:var(--navy-2);color:#f1eee7}
+.days-lead{text-align:center;font-size:15px;color:#b9c2c7;margin-bottom:9vh}
+.days-wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:6vw;align-items:center;max-width:1100px;margin:0 auto}
+.days-list{display:grid;gap:22px}
+.day{background:#f5f0e6;color:#2b2a26;padding:34px 38px;border-radius:2px}
+.day-no{font-family:var(--serif);font-size:13px;letter-spacing:.24em;color:#9a7f45;margin-bottom:12px}
+.day-text{font-family:var(--hand);font-size:20px;line-height:2;letter-spacing:.04em}
+.days-ui .phone{max-width:300px;aspect-ratio:375/645}
+.days-cap{margin-top:26px;text-align:center;font-size:13px;color:#b9c2c7}
+
+/* =====================================================================
+   SECTION 14 FINAL CTA
+   ===================================================================== */
+.final{padding:24vh 8vw 26vh;background:var(--ivory);text-align:center}
+.final-copy{font-size:clamp(30px,3vw,44px);color:var(--navy-1)}
+.final-copy2{margin-top:28px;font-family:var(--serif);font-size:20px;letter-spacing:.08em;line-height:2;color:var(--ink)}
+.final-action{margin-top:9vh}
+.final-note{margin-top:18px;font-size:13px;color:var(--muted)}
+
+/* ---------- フッター ---------- */
+.site-footer{padding:56px 5vw calc(48px + var(--bar-h));background:var(--paper);border-top:1px solid var(--line);
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px}
+.site-footer p{font-size:13px;color:var(--muted)}
+.site-footer small{font-size:11px;color:#8a949a}
+
+/* ---------- 固定バー ---------- */
+.cta-bar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:flex;align-items:center;justify-content:center;gap:28px;
+  padding:12px 5vw;background:rgba(13,29,42,.96);color:#e8e4da;border-top:1px solid rgba(194,167,109,.35)}
+.cta-bar-text{font-family:var(--serif);font-size:14px;letter-spacing:.1em}
+.btn-bar{min-height:46px;padding:0 26px;font-size:14px;background:var(--paper);color:var(--navy-2);border:1px solid var(--paper)}
+.btn-bar:hover{background:transparent;color:var(--paper)}
+
+/* =====================================================================
+   タブレット以下
+   ===================================================================== */
+@media(max-width:1024px){
+  .site-header{position:relative;background:var(--ivory)}
+  .fv{grid-template-columns:1fr;grid-template-rows:auto auto;min-height:0}
+  .fv-photo{grid-column:1;grid-row:1;height:64vh;min-height:360px}
+  .fv-text{grid-column:1;grid-row:2;padding:48px 7vw 64px}
+  .scenes{grid-template-columns:repeat(2,1fr)}
+  .about,.feature,.check-visual,.event-body,.days-wrap{grid-template-columns:1fr}
+  .about{padding:16vh 8vw}
+  .about-ui{margin-top:40px}
+  .feature{padding:16vh 8vw}
+  .feature-ui{order:2;margin-top:40px}
+  .event-body{padding:0 8vw}
+  .event-body .feature-ui{margin-top:48px}
+  .mio,.return,.pj{grid-template-columns:1fr}
+  .mio-photo,.return-photo{min-height:0;aspect-ratio:4/3}
+  .pj-visual{min-height:0;aspect-ratio:4/3}
+  .mio-text,.return-text,.pj-text{padding:12vh 8vw}
+  .check-visual{gap:40px;margin-top:40px}
+  .radar{margin:0 auto}
+  .days-ui{margin-top:20px}
+}
+
+/* =====================================================================
+   スマホ
+   ===================================================================== */
+@media(max-width:600px){
+  body{font-size:min(16px,4.3vw)}
+  .body{font-size:min(16px,4.3vw)}
+  .site-header{padding:16px 6vw}
+  .brand{font-size:15px;gap:10px}
+  .brand-mark{width:30px;height:30px}
+
+  .fv-photo{height:62vh;min-height:320px;background-position:66% center}
+  .fv-text{padding:40px 6vw 56px}
+  .fv-title{font-size:min(42px,11vw)}
+  .fv-sub{font-size:min(15px,4.1vw);margin-top:22px}
+  .fv-actions{margin-top:34px;align-items:stretch}
+  .fv-actions .btn-text{align-self:center}
+  .btn{width:100%;padding:0 20px;font-size:min(15px,4.1vw)}
+
+  .question{min-height:0;padding:22vh 6vw}
+  .question-text{font-size:min(28px,7.4vw);text-align:left}
+
+  .unseen{padding:15vh 0 16vh}
+  .unseen-head{padding:0 6vw;margin-bottom:6vh}
+  .unseen-head h2{font-size:min(30px,8vw)}
+  /* 写真は横にスクロール */
+  .scenes{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding:0 6vw 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .scenes::-webkit-scrollbar{display:none}
+  .scene{flex:0 0 76vw;scroll-snap-align:center}
+  .scene figcaption{padding:16px 2px 0}
+  .scene b{font-size:20px}
+  .scene-line{font-size:min(14px,3.8vw)}
+  .unseen-foot{margin-top:10vh;padding:0 6vw;font-size:min(22px,6vw);text-align:left}
+
+  .about{padding:15vh 6vw}
+  .about-lead{font-size:min(21px,5.6vw)}
+  .about-steps,.about-close{font-size:min(17px,4.5vw)}
+  .about-ui .phone{max-width:78vw}
+
+  .story{padding:15vh 6vw 12vh}
+  .story-head{text-align:left;margin-bottom:8vh}
+  .story-head h2{font-size:min(30px,8vw)}
+  .story-line::before,.story-line::after{left:5px}
+  .story-step{grid-template-columns:1fr;gap:26px;padding:0 0 11vh 34px}
+  .story-step::before{left:5px;top:10px;margin:-4px 0 0 -4px}
+  .story-step:nth-child(even) .story-copy{order:0}
+  .story-copy,.story-step:nth-child(even) .story-copy{text-align:left}
+  .story-copy h3{font-size:min(22px,6vw)}
+  .story-copy p{font-size:min(16px,4.3vw)}
+  .story-ui .phone-sm{margin:0;max-width:56vw}
+
+  .feature{padding:15vh 6vw}
+  .feature h2{font-size:min(28px,7.5vw);margin-bottom:26px}
+  .feature .phone{max-width:74vw}
+  .event-visual{height:auto;min-height:0;aspect-ratio:4/3;background-position:82% center}
+  .event-body{padding:0 6vw}
+  .event-body .feature-text{padding-top:10vh}
+  .radar{max-width:88vw}
+  .radar text{font-size:17px}
+
+  .mio-text,.return-text,.pj-text{padding:11vh 6vw}
+  .mio-text h2{font-size:min(28px,7.5vw)}
+  .mio-photo{aspect-ratio:1/1;background-position:26% center}
+
+  .privacy{padding:18vh 6vw;text-align:left}
+  .privacy-text{font-size:min(17px,4.5vw)}
+  .privacy-big{font-size:min(32px,8.5vw)}
+
+  .return-photo{aspect-ratio:4/5}
+  .body-lg{font-size:min(19px,5vw)}
+  .return-big{font-size:min(26px,7vw)}
+
+  .pj-visual{aspect-ratio:4/5}
+  .pj-letter{font-size:min(20px,5.3vw)}
+  .pj-sub{font-size:min(19px,5vw)}
+
+  .days{padding:14vh 6vw}
+  .days-lead{text-align:left;margin-bottom:6vh}
+  .day{padding:26px 24px}
+  .day-text{font-size:min(19px,5.1vw)}
+  .days-ui .phone{max-width:70vw}
+
+  .final{padding:20vh 6vw 22vh}
+  .final-copy{font-size:min(32px,8.5vw)}
+  .final-copy2{font-size:min(19px,5vw)}
+
+  .site-footer{flex-direction:column;align-items:flex-start}
+  .cta-bar{gap:12px;padding:10px 4vw}
+  .cta-bar-text{font-size:min(13px,3.4vw);letter-spacing:.04em;white-space:nowrap}
+  .btn-bar{width:auto;min-height:44px;padding:0 16px;font-size:min(13px,3.5vw);white-space:nowrap}
+}
+@media(max-width:359px){.cta-bar-text{display:none}}

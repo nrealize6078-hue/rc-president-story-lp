@@ -116,6 +116,7 @@ w-b{display:inline-block;max-width:100%}
 .fv-sub{margin-top:30px;font-size:15px;line-height:2;color:var(--muted)}
 .fv-brand{margin-top:18px;font-family:var(--serif);font-size:15px;letter-spacing:.22em;color:var(--navy-2)}
 .fv-actions{margin-top:44px;display:flex;flex-direction:column;align-items:flex-start;gap:20px}
+.fv-photo-mobile{display:none}
 @media(prefers-reduced-motion:reduce){.fv-photo{animation:none}}
 
 /* =====================================================================
@@ -313,9 +314,10 @@ w-b{display:inline-block;max-width:100%}
   .brand{font-size:15px;gap:10px}
   .brand-mark{width:30px;height:30px}
 
-  .fv-photo{grid-row:2;height:62vh;min-height:320px;background-position:66% center}
+  .fv-photo-desktop{display:none}
   .fv-text{grid-row:1;padding:40px 6vw 56px}
   .fv-title{font-size:min(42px,11vw)}
+  .fv-photo-mobile{display:block;width:calc(100% + 12vw);aspect-ratio:4/3;margin:28px -6vw 0;background:#b8a58a url(assets/fv-office.webp) 66% center/cover no-repeat}
   .fv-sub{font-size:min(15px,4.1vw);margin-top:22px}
   .fv-actions{margin-top:34px;align-items:stretch}
   .fv-actions .btn-text{align-self:center}

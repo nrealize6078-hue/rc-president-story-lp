@@ -313,8 +313,8 @@ w-b{display:inline-block;max-width:100%}
   .brand{font-size:15px;gap:10px}
   .brand-mark{width:30px;height:30px}
 
-  .fv-photo{height:62vh;min-height:320px;background-position:66% center}
-  .fv-text{padding:40px 6vw 56px}
+  .fv-photo{grid-row:2;height:62vh;min-height:320px;background-position:66% center}
+  .fv-text{grid-row:1;padding:40px 6vw 56px}
   .fv-title{font-size:min(42px,11vw)}
   .fv-sub{font-size:min(15px,4.1vw);margin-top:22px}
   .fv-actions{margin-top:34px;align-items:stretch}

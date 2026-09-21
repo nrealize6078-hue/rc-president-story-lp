@@ -68,11 +68,11 @@ w-b{display:inline-block;max-width:100%}
 @media(prefers-reduced-motion:reduce){.fade{opacity:1;transform:none;transition:none}}
 
 /* ---------- スマホの画面（大きく、少しだけ傾ける） ---------- */
-.phone{position:relative;width:100%;max-width:340px;aspect-ratio:390/844;border-radius:36px;padding:10px;background:#0f1b24;
+.phone{position:relative;display:flex;align-items:center;justify-content:center;width:100%;max-width:340px;aspect-ratio:390/844;border-radius:36px;padding:10px;background:#0f1b24;overflow:hidden;
   box-shadow:0 30px 60px rgba(13,29,42,.18),0 8px 18px rgba(13,29,42,.1);margin:0 auto}
-.phone>img,.phone>.mock{width:100%;height:100%;border-radius:27px;object-fit:cover;object-position:top;background:#fff;overflow:hidden}
-.phone.line-capture{aspect-ratio:750/1334;padding:0;border-radius:28px;overflow:hidden}
-.phone.line-capture>img{border-radius:28px}
+.phone>img,.phone>.mock{width:100%;height:100%;border-radius:27px;object-fit:contain;object-position:top;background:#fff;overflow:hidden}
+.phone.line-capture{aspect-ratio:750/1334}
+.phone.line-capture>img{border-radius:27px}
 .tilt-r{transform:rotate(2.5deg)}
 .tilt-l{transform:rotate(-2.5deg)}
 .phone-sm{max-width:230px;border-radius:28px;padding:8px}
@@ -317,10 +317,11 @@ w-b{display:inline-block;max-width:100%}
   .brand{font-size:15px;gap:10px}
   .brand-mark{width:30px;height:30px}
 
+  .fv{min-height:calc(100svh - 62px);background:var(--ivory)}
   .fv-photo-desktop{display:none}
-  .fv-text{grid-row:1;padding:40px 6vw 56px}
+  .fv-text{grid-row:1;min-height:calc(100svh - 62px);padding:56px 6vw 64px;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(rgba(246,243,237,.72),rgba(246,243,237,.9)),url(assets/fv-office.webp) 66% center/cover no-repeat}
   .fv-title{font-size:min(42px,11vw)}
-  .fv-photo-mobile{display:block;width:calc(100% + 12vw);aspect-ratio:4/3;margin:28px -6vw 0;background:#b8a58a url(assets/fv-office.webp) 66% center/cover no-repeat}
+  .fv-photo-mobile{display:none}
   .fv-sub{font-size:min(15px,4.1vw);margin-top:22px}
   .fv-actions{margin-top:34px;align-items:stretch}
   .fv-actions .btn-text{align-self:center}
@@ -344,7 +345,7 @@ w-b{display:inline-block;max-width:100%}
   .about{padding:15vh 6vw}
   .about-lead{font-size:min(21px,5.6vw)}
   .about-steps,.about-close{font-size:min(17px,4.5vw)}
-  .about-ui .phone{max-width:78vw}
+  .about-ui .phone{max-width:68vw}
 
   .story{padding:15vh 6vw 8vh}
   .story-head{text-align:left;margin-bottom:8vh}
@@ -356,7 +357,10 @@ w-b{display:inline-block;max-width:100%}
   .step-text,.step:nth-child(even) .step-text{justify-self:start;max-width:none}
   .step-no{font-size:34px}
   .step-head{font-size:min(24px,6.6vw);margin:20px 0 16px}
-  .step .phone{max-width:62vw}
+  .step .phone{max-width:58vw}
+  .step .phone.line-capture{max-width:56vw}
+  .tilt-r{transform:rotate(1.2deg)}
+  .tilt-l{transform:rotate(-1.2deg)}
   .duo{padding-bottom:16%}
   .duo .phone-sm{max-width:42vw}
   .duo-check{grid-template-columns:1fr;gap:28px;padding:0}
@@ -381,7 +385,7 @@ w-b{display:inline-block;max-width:100%}
   .days-lead{text-align:left;margin-bottom:6vh}
   .day{padding:26px 24px}
   .day-text{font-size:min(19px,5.1vw)}
-  .days-ui .phone{max-width:70vw}
+  .days-ui .phone{max-width:60vw}
 
   .final{padding:20vh 6vw 22vh}
   .final-copy{font-size:min(32px,8.5vw)}

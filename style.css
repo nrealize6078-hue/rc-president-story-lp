@@ -111,6 +111,7 @@ w-b{display:inline-block;max-width:100%}
 .fv{position:relative;display:grid;grid-template-columns:minmax(0,34fr) minmax(0,66fr);min-height:100vh;min-height:100svh;background:var(--ivory)}
 .fv-photo{grid-column:2;grid-row:1;background:#b8a58a url(assets/fv-office.webp) 62% center/cover no-repeat;
   animation:slowzoom 18s ease-out both}
+@media(min-width:1025px){.fv-photo{background-position:82% center}}
 @keyframes slowzoom{from{transform:scale(1.06)}to{transform:scale(1)}}
 .fv{overflow:hidden}
 .fv-text{grid-column:1;grid-row:1;align-self:end;padding:0 3.5vw 11vh 5vw;position:relative;z-index:2}

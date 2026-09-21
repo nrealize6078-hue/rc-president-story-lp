@@ -71,6 +71,8 @@ w-b{display:inline-block;max-width:100%}
 .phone{position:relative;width:100%;max-width:340px;aspect-ratio:390/844;border-radius:36px;padding:10px;background:#0f1b24;
   box-shadow:0 30px 60px rgba(13,29,42,.18),0 8px 18px rgba(13,29,42,.1);margin:0 auto}
 .phone>img,.phone>.mock{width:100%;height:100%;border-radius:27px;object-fit:cover;object-position:top;background:#fff;overflow:hidden}
+.phone.line-capture{aspect-ratio:750/1334;padding:0;border-radius:28px;overflow:hidden}
+.phone.line-capture>img{border-radius:28px}
 .tilt-r{transform:rotate(2.5deg)}
 .tilt-l{transform:rotate(-2.5deg)}
 .phone-sm{max-width:230px;border-radius:28px;padding:8px}
@@ -261,6 +263,7 @@ w-b{display:inline-block;max-width:100%}
 .day-no{font-family:var(--serif);font-size:13px;letter-spacing:.24em;color:#9a7f45;margin-bottom:12px}
 .day-text{font-family:var(--hand);font-size:20px;line-height:2;letter-spacing:.04em}
 .days-ui .phone{max-width:300px;aspect-ratio:375/645}
+.days-ui .phone.line-capture{aspect-ratio:750/1334}
 .days-cap{margin-top:26px;text-align:center;font-size:13px;color:#b9c2c7}
 
 /* =====================================================================

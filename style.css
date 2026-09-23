@@ -109,7 +109,7 @@ w-b{display:inline-block;max-width:100%}
    SECTION 01 ファーストビュー
    ===================================================================== */
 .fv{position:relative;display:grid;grid-template-columns:minmax(0,34fr) minmax(0,66fr);min-height:100vh;min-height:100svh;background:var(--ivory)}
-.fv-photo{grid-column:2;grid-row:1;background:#b8a58a url(assets/fv-office.webp) 62% center/cover no-repeat;
+.fv-photo{grid-column:2;grid-row:1;background:#b8a58a url(assets/fv-office.webp?v=2) 62% center/cover no-repeat;
   animation:slowzoom 18s ease-out both}
 @media(min-width:1025px){
   .fv{grid-template-columns:minmax(0,31fr) minmax(0,69fr)}
@@ -323,7 +323,7 @@ w-b{display:inline-block;max-width:100%}
 
   .fv{min-height:calc(100svh - 62px);background:var(--ivory)}
   .fv-photo-desktop{display:none}
-  .fv-text{grid-row:1;min-height:calc(100svh - 62px);padding:56px 6vw 64px;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(rgba(246,243,237,.72),rgba(246,243,237,.9)),url(assets/fv-office.webp) 66% center/cover no-repeat}
+  .fv-text{grid-row:1;min-height:calc(100svh - 62px);padding:56px 6vw 64px;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(rgba(246,243,237,.72),rgba(246,243,237,.9)),url(assets/fv-office.webp?v=2) 66% center/cover no-repeat}
   .fv-title{font-size:min(42px,11vw)}
   .fv-photo-mobile{display:none}
   .fv-sub{font-size:min(15px,4.1vw);margin-top:22px}

@@ -232,9 +232,6 @@ w-b{display:inline-block;max-width:100%}
 /* =====================================================================
    SECTION 10 会社には見えない
    ===================================================================== */
-.privacy{padding:24vh 8vw;background:var(--paper);text-align:center}
-.privacy-text{font-size:17px;line-height:2.3;color:var(--muted)}
-.privacy-big{margin-top:12vh;font-size:clamp(30px,3.2vw,46px);color:var(--navy-1)}
 
 /* =====================================================================
    SECTION 11 社長の想いへ戻る
@@ -374,9 +371,6 @@ w-b{display:inline-block;max-width:100%}
   .radar text{font-size:18px}
   .return-text,.pj-text{padding:11vh 6vw}
 
-  .privacy{padding:18vh 6vw;text-align:left}
-  .privacy-text{font-size:min(17px,4.5vw)}
-  .privacy-big{font-size:min(32px,8.5vw)}
 
   .return-photo{aspect-ratio:4/5}
   .body-lg{font-size:min(19px,5vw)}
